@@ -1,3 +1,5 @@
+firebase-admin
+python-telegram-bot
 # Make sure to install those as additional_dependencies in the
 # pre-commit hooks for pylint & mypy
 # Also update the readme accordingly

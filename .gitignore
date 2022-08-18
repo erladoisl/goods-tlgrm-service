@@ -90,3 +90,5 @@ telegram.jpg
 
 # virtual env
 venv*
+config.py
+goods-gazer-firebase-adminsdk.json
