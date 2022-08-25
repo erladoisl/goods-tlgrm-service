@@ -41,9 +41,13 @@ def save_chat_id(user_uid, chat_id):
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_identification = context.args[0] if len(context.args) > 0 else -1
+    
     logging.info(
         f'Adding user with uid:[{user_identification}] and chat_id:[{update.effective_chat.id}]')
-    responce = save_chat_id(user_identification, update.effective_chat.id)
+    
+    if user_identification != -1:
+        responce = save_chat_id(user_identification, update.effective_chat.id)
+    else: responce = "Не удалось идентифицировать пользователя"
 
     await context.bot.send_message(chat_id=update.effective_chat.id, text=responce)
 
